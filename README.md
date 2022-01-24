@@ -4,7 +4,7 @@ DGL is an easy-to-use, Pytorch library for providing implementations of multiple
 
 
 <p align="center">
-  <img src="https://github.com/zarekxu/QuadraLib/blob/main/figures/architecture.pdf" alt="library architecture" width="600">
+  <img src="https://github.com/zarekxu/QuadraLib/blob/main/figures/architecture.PNG" alt="library architecture" width="1200">
   <br>
   <b>Figure</b>: QuadraLib Architecture
 </p>
