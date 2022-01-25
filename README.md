@@ -27,3 +27,19 @@ QuadraLib provides several analysis tools to help users to analyze activation, g
 
 ## Get Started
 
+
+
+
+
+
+## Cite
+
+If you use QuadraLib in a scientific publication, we would appreciate citations to the following paper:
+```
+@article{wang2019dgl,
+    title={Deep Graph Library: A Graph-Centric, Highly-Performant Package for Graph Neural Networks},
+    author={Minjie Wang and Da Zheng and Zihao Ye and Quan Gan and Mufei Li and Xiang Song and Jinjing Zhou and Chao Ma and Lingfan Yu and Yu Gai and Tianjun Xiao and Tong He and George Karypis and Jinyang Li and Zheng Zhang},
+    year={2022},
+    journal={arXiv preprint arXiv:1909.01315}
+}
+```
