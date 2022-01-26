@@ -34,26 +34,20 @@ QuadraLib provides several analysis tools to help users to analyze activation, g
 
 ## Get Started 
 
-
+Users can find the two application tasks in [./image_classification]() and [./object_detection](). More recognition tasks will be added in the future. 
+All the configurations are defined in yaml filed ``config.yaml``, please check any files in `./image_classification/experimets` for more details. 
 
 simply run the cmd for the training:
 
 ```bash
-## 1 GPU for lenet
-CUDA_VISIBLE_DEVICES=0 python -u train.py --work-path ./experiments/cifar10/lenet
-
-## resume from ckpt
-CUDA_VISIBLE_DEVICES=0 python -u train.py --work-path ./experiments/cifar10/lenet --resume
-
-## 2 GPUs for resnet1202
-CUDA_VISIBLE_DEVICES=0,1 python -u train.py --work-path ./experiments/cifar10/preresnet1202
-
-## 4 GPUs for densenet190bc
-CUDA_VISIBLE_DEVICES=0,1,2,3 python -u train.py --work-path ./experiments/cifar10/densenet190bc
-
-## 1 GPU for vgg19 inference
-CUDA_VISIBLE_DEVICES=0 python -u eval.py --work-path ./experiments/cifar10/vgg19
+## 1 GPU for vgg11 training from scratch
+python train.py --work-path ./experiments/cifar10/vgg19
 ``` 
+```bash
+## 1 GPU for vgg11 training from checkpoint
+python train.py --work-path ./experiments/cifar10/vgg19
+``` 
+
 
 We use yaml file ``config.yaml`` to save the parameters, check any files in `./experimets` for more details.  
 You can see the training curve via tensorboard, ``tensorboard --logdir path-to-event --port your-port``.  
