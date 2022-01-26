@@ -50,7 +50,7 @@ class Quadraour(nn.Module):
 
 
 
-class Quadratype1(nn.Module):
+class Type1(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1):
         super(Quadratype1, self).__init__()
         self.in_channels = in_channels
@@ -60,7 +60,6 @@ class Quadratype1(nn.Module):
         self.padding = padding
         self.dilation = dilation
 
-        # self.weight = Parameter(torch.Tensor(out_channels, in_channels, kernel_size, kernel_size))
         self.bilconv = nn.Bilinear(kernel_size*kernel_size*in_channels, kernel_size*kernel_size*in_channels, out_channels, bias = False)
 
 
@@ -69,7 +68,6 @@ class Quadratype1(nn.Module):
         h_in, w_in = input.shape[2:]
         h_out = h_in
         w_out = w_in
-        # x: [batchsize ksize num_sliding]
         x = torch.nn.functional.unfold(input, kernel_size=self.kernel_size, padding=self.padding)
 
         batchsize = input.shape[0]
@@ -78,21 +76,15 @@ class Quadratype1(nn.Module):
 
         assert x.shape[1] == ksize
 
-        # w = self.weight
-        # print("aaaaaa", x.size())
-        # x=x.transpose(1, 2)
         x=x.view(x.size(0),x.size(2),x.size(1))
         out_unf = self.bilconv(x,x)
-        # print(self.bilconv.weight.size())
         out_unf=out_unf.view(out_unf.size(0),out_unf.size(2),out_unf.size(1))
-        # out_unf = x.transpose(1, 2).matmul(w.view(w.size(0), -1).t()).transpose(1, 2)
-        # print("bbbbbbb", out_unf.size())
         out = torch.nn.functional.fold(out_unf, output_size=[h_out, w_out], kernel_size=1, padding=0, dilation=self.dilation, stride=1)
 
         return out
 
 
-class Quadratype3(nn.Module):
+class Type3(nn.Module):
 	def __init__(self, in_channels, out_channels):
 		super(Quadratype3, self).__init__()
 		self.conv1 = nn.Conv2d(in_channels, out_channels,3,stride=1, padding=1)
