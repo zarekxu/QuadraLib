@@ -37,6 +37,8 @@ QuadraLib provides several analysis tools to help users to analyze activation, g
 Users can find the two application tasks in [./image_classification]() and [./object_detection](). More recognition tasks will be added in the future. 
 All the configurations are defined in yaml filed ``config.yaml``, please check any files in `./image_classification/experimets` for more details. 
 
+
+### Image Classification
 simply run the cmd for the training:
 
 ```bash
@@ -45,20 +47,14 @@ python train.py --work-path ./experiments/cifar10/vgg19
 ``` 
 ```bash
 ## 1 GPU for vgg11 training from checkpoint
-python train.py --work-path ./experiments/cifar10/vgg19
+python train.py --resume --work-path ./experiments/cifar10/vgg19
 ``` 
-
-
-We use yaml file ``config.yaml`` to save the parameters, check any files in `./experimets` for more details.  
 You can see the training curve via tensorboard, ``tensorboard --logdir path-to-event --port your-port``.  
-The training log will be dumped via logging, check ``log.txt`` in your work path.
 
 
-## Get Started
+### Quadratic Neuron Layers
 
-
-
-
+We reproduced all the state-of-the-art quadratic neuron design as Quadratic Layers, users can find them in [here](https://github.com/zarekxu/QuadraLib/blob/main/image_classification/models/quadratic_layer.py)
 
 
 ## Cite
@@ -66,8 +62,8 @@ The training log will be dumped via logging, check ``log.txt`` in your work path
 If you use QuadraLib in a scientific publication, we would appreciate citations to the following paper:
 ```
 @article{wang2019dgl,
-    title={Deep Graph Library: A Graph-Centric, Highly-Performant Package for Graph Neural Networks},
-    author={Minjie Wang and Da Zheng and Zihao Ye and Quan Gan and Mufei Li and Xiang Song and Jinjing Zhou and Chao Ma and Lingfan Yu and Yu Gai and Tianjun Xiao and Tong He and George Karypis and Jinyang Li and Zheng Zhang},
+    title={QuadraLib: A Performant Quadratic Neural Network Library for Architecture Optimization and Design Exploration},
+    author={Xu, Zirui and Xiong, Jinjun and Yu, Fuxun and Chen, Xiang},
     year={2022},
     journal={arXiv preprint arXiv:1909.01315}
 }
