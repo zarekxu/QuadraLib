@@ -3,9 +3,9 @@ import torch.nn.functional as F
 
 
 class Quadraour(nn.Module):
-	def __init__(self, in_channels, out_channels):
+	def __init__(self, in_channels, out_channels, kernel_size, stride, padding, dialation):
 		super(Quadraour, self).__init__()
-		self.conv1 = nn.Conv2d(in_channels, out_channels,3,stride=1, padding=1)
+		self.conv1 = nn.Conv2d(in_channels, out_channels,kernel_size, stride=1, padding=1, dialation=1)
 		self.conv2 = nn.Conv2d(in_channels, out_channels,3,stride=1, padding=1)
 		self.conv3 = nn.Conv2d(in_channels, out_channels,3,stride=1, padding=1)
 		self.bn1 = nn.BatchNorm2d(out_channels)
@@ -15,38 +15,38 @@ class Quadraour(nn.Module):
 	def forward(self,x):
         
 		y0 = self.conv1(x)
-		# y0 = self.bn1(y0)
+		y0 = self.bn1(y0)
 		y1 = self.conv2(x)
-		# y1 = self.bn2(y1)
+		y1 = self.bn2(y1)
 		y2 = self.conv3(x)
-		# y2 = self.bn3(y2)
+		y2 = self.bn3(y2)
 		y = torch.mul(y0,y1)
 		y = y + y2
 		return y
 
-class Quadraourdropout(nn.Module):
-	def __init__(self, in_channels, out_channels):
-		super(Quadraourdropout, self).__init__()
-		self.conv1 = nn.Conv2d(in_channels, out_channels,3,stride=1, padding=1)
-		self.conv2 = nn.Conv2d(in_channels, out_channels,3,stride=1, padding=1)
-		self.conv3 = nn.Conv2d(in_channels, out_channels,3,stride=1, padding=1)
-		self.dropout = nn.Dropout(0.25)
-		self.bn1 = nn.BatchNorm2d(out_channels)
-		self.bn2 = nn.BatchNorm2d(out_channels)
-		self.bn3 = nn.BatchNorm2d(out_channels)
+# class Quadraourdropout(nn.Module):
+# 	def __init__(self, in_channels, out_channels):
+# 		super(Quadraourdropout, self).__init__()
+# 		self.conv1 = nn.Conv2d(in_channels, out_channels,3,stride=1, padding=1)
+# 		self.conv2 = nn.Conv2d(in_channels, out_channels,3,stride=1, padding=1)
+# 		self.conv3 = nn.Conv2d(in_channels, out_channels,3,stride=1, padding=1)
+# 		self.dropout = nn.Dropout(0.25)
+# 		self.bn1 = nn.BatchNorm2d(out_channels)
+# 		self.bn2 = nn.BatchNorm2d(out_channels)
+# 		self.bn3 = nn.BatchNorm2d(out_channels)
         
-	def forward(self,x):
+# 	def forward(self,x):
         
-		y0 = self.conv1(x)
-		# y0 = self.bn1(y0)
-		y0 = self.dropout(y0)
-		y1 = self.conv2(x)
-		# y1 = self.bn1(y1)
-		y1 = self.dropout(y1)
-		y2 = self.conv3(x)
-		y = torch.mul(y0,y1)
-		y = y + y2
-		return y
+# 		y0 = self.conv1(x)
+# 		# y0 = self.bn1(y0)
+# 		y0 = self.dropout(y0)
+# 		y1 = self.conv2(x)
+# 		# y1 = self.bn1(y1)
+# 		y1 = self.dropout(y1)
+# 		y2 = self.conv3(x)
+# 		y = torch.mul(y0,y1)
+# 		y = y + y2
+# 		return y
 
 
 
