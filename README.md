@@ -20,6 +20,8 @@ QDNNs is a new but rapidly evovling research topic, which brrow many piror knowl
 
 QuadraLib collects current [QDNN papers](https://github.com/zarekxu/QuadraLib/blob/main/SOTA%20Papers/paper_list.md) and their key designs. It also provides many state-of-the-art [QDNN layers](https://docs.dgl.ai/api/python/nn.html) for users to build new model architectures.
 
+
+
 ### Analysis Tools
 
 QuadraLib provides several analysis tools to help users to analyze activation, gradients, and weights of their generated models. These tools are written as functions in [Jupyter Notebook files] for easy usage and modification.
@@ -52,6 +54,7 @@ python train.py --resume --work-path ./experiments/cifar10/vgg19
 You can see the training curve via tensorboard, ``tensorboard --logdir path-to-event --port your-port``.  
 
 
+
 ### Quadratic Neuron Layers
 
 We reproduced all the state-of-the-art quadratic neuron design as Quadratic Layers, users can find them in [here](https://github.com/zarekxu/QuadraLib/blob/main/image_classification/models/quadratic_layer.py)
@@ -61,7 +64,7 @@ We reproduced all the state-of-the-art quadratic neuron design as Quadratic Laye
 
 If you use QuadraLib in a scientific publication, we would appreciate citations to the following paper:
 ```
-@article{wang2019dgl,
+@article{xu2022qua,
     title={QuadraLib: A Performant Quadratic Neural Network Library for Architecture Optimization and Design Exploration},
     author={Xu, Zirui and Xiong, Jinjun and Yu, Fuxun and Chen, Xiang},
     year={2022},
