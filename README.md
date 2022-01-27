@@ -32,7 +32,7 @@ There are two ways to build the QDNN model structure in QuadraLib.
 QuadraLib provides several analysis tools to help users to analyze activation, gradients, and weights of their generated models. These tools are written as functions in [Jupyter Notebook files] for easy usage and modification. 
 
 <p align="center">
-  <img src="https://github.com/zarekxu/QuadraLib/blob/main/Figures/activation_visulization.PNG" alt="visualization" width="1200">
+  <img src="https:https://github.com/zarekxu/QuadraLib/blob/main/Figures/activation_visulization.png" alt="visualization" width="1200">
   <br>
   <b>Figure</b>: Activation Visualization Examples
 </p>
