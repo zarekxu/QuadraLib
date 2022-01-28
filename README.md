@@ -78,6 +78,11 @@ python train.py --resume --work-path ./experiments/cifar10/vgg19
 ``` 
 You can see the training curve via tensorboard, ``tensorboard --logdir path-to-event --port your-port``.  
 
+For auto-builder, run the cmd to get the important score of each layer. 
+
+
+### Object Detection
+
 
 ### Quadratic Neuron Layers
 
