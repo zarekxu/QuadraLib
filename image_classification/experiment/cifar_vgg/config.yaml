@@ -1,8 +1,8 @@
 # net architecture
-architecture: vgg11
+architecture: qvgg7
 
-# # log and checkpoint
-# data_path: ./data
+# log and checkpoint
+data_path: ./data
 # ckpt_path: ./
 # ckpt_name: vgg19
 
@@ -24,9 +24,9 @@ augmentation:
 epoch: 200
 input_size: 32
 learning_rate: 0.1
-batch_size: 128
-test_batch: 200
-eval_freq: 2
+batch_size: 256
+test_batch: 256
+# eval_freq: 2
 workers: 4
 
 
