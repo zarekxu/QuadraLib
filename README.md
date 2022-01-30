@@ -81,6 +81,18 @@ You can see the training curve via tensorboard, ``tensorboard --logdir path-to-e
 For auto-builder, run the cmd to get the important score of each layer. 
 
 
+#### Performance
+
+| architecture          | params | batch size | epoch | CIFAR-10 test acc (%) | CIFAR-100 test acc (%) |
+| :-------------------- | :----: | :--------: | :---: | :--------------: | :---------------: |
+| VGG-13                |  14.7M |    256     |  200  |      xx.xx       |       xx.xx       |
+| QVGG-7                |  12.0M |    256     |  200  |      94.13       |       xx.xx       |
+| ResNet32              |  0.48M |    256     |  200  |      xx.xx       |       xx.xx       |
+| QResNet14             |  0.39M |    256     |  200  |      93.23       |       xx.xx       |
+
+
+
+
 ### Object Detection
 
 
