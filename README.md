@@ -54,10 +54,9 @@ QuadraLib provides several analysis tools to help users to analyze activation, g
 
 ## Requirements
 
-- Python (**>=3.6**)
-- PyTorch (**>=1.4.0**)
-- Tensorboard(**>=1.4.0**) (for ***visualization***)
-- Other dependencies (pyyaml, easydict)
+- Python (**=3.7**)
+- PyTorch (**=1.8.0**)
+- Other dependencies (pyyaml, easydict, tensorboard)
 
 ## Get Started 
 
@@ -77,6 +76,25 @@ python train.py --work-path ./experiments/cifar10/vgg19
 python train.py --resume --work-path ./experiments/cifar10/vgg19
 ``` 
 You can see the training curve via tensorboard, ``tensorboard --logdir path-to-event --port your-port``.  
+
+For auto-builder, run the cmd to get the important score of each layer. 
+
+
+Two pre-trained QDNN models (QVGG-7 and QResNet14) can be found in [./checkpoint]()
+
+#### Performance
+
+| architecture          | params | batch size | epoch | CIFAR-10 test acc (%) | CIFAR-100 test acc (%) |
+| :-------------------- | :----: | :--------: | :---: | :--------------: | :---------------: |
+| VGG-13                |  14.7M |    256     |  200  |      xx.xx       |       xx.xx       |
+| QVGG-7                |  12.0M |    256     |  200  |      94.13       |       xx.xx       |
+| ResNet32              |  0.48M |    256     |  200  |      92.83       |       xx.xx       |
+| QResNet14             |  0.39M |    256     |  200  |      93.23       |       xx.xx       |
+
+
+
+
+### Object Detection
 
 
 ### Quadratic Neuron Layers
