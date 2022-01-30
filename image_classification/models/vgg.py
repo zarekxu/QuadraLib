@@ -77,3 +77,6 @@ def vgg19(num_classes):
 
 def qvgg7(num_classes):
     return VGG(make_layers(cfg["Q7"], batch_norm=True, qua = True), num_classes)
+
+def qvgg13(num_classes):
+    return VGG(make_layers(cfg["D"], batch_norm=True, qua = True), num_classes)
