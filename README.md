@@ -54,10 +54,9 @@ QuadraLib provides several analysis tools to help users to analyze activation, g
 
 ## Requirements
 
-- Python (**>=3.6**)
-- PyTorch (**>=1.4.0**)
-- Tensorboard(**>=1.4.0**) (for ***visualization***)
-- Other dependencies (pyyaml, easydict)
+- Python (**=3.7**)
+- PyTorch (**=1.8.0**)
+- Other dependencies (pyyaml, easydict, tensorboard)
 
 ## Get Started 
 
