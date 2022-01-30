@@ -24,7 +24,8 @@ QDNNs is a new but rapidly evovling research topic, which brrow many piror knowl
 
 ### Models and benchmarks for QDNN researchers
 
-QuadraLib collects current [QDNN papers](https://github.com/zarekxu/QuadraLib/blob/main/SOTA%20Papers/paper_list.md) and their key designs. It also provides a variety of pre-defined QDNN models in multiple application scenarios (e.g. image classification, object detection) that have state-of-the-art accuracy performance. Users can also easily create their own QDNN models by using quandratic layers provided by QuadraLib, via mannually building or auto-builder. More models and application tasks will be supported in the future.  
+QuadraLib collects current [QDNN papers](https://github.com/zarekxu/QuadraLib/blob/main/SOTA%20Papers/paper_list.md) and their key designs. It also provides a variety of pre-defined QDNN models in multiple application scenarios (e.g. image classification, object detection) that have state-of-the-art accuracy performance. Currently, it provide pre-trained VGGNet and ResNet on CIFAR-10 in image classification and VGG-based SSD in object detection.
+Users can also easily create their own QDNN models by using quandratic layers provided by QuadraLib, via mannually building or auto-builder. More models and application tasks will be supported in the future.  
 
 ### QDNN Model Definition: Manual Design and Auto-builder
 
