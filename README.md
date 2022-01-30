@@ -14,18 +14,28 @@ QuadraLib is an easy-to-use, Pytorch library for providing implementations of mu
 
 ### Multiple Types of Quadratic Neuron Supporting
 
-QDNNs is a new but rapidly evovling research topic, which brrow many piror knowledge from the first-order DNNs. The current QDNNs work use different DL framework and distinct benchmarks, which is not easy to comprehensive evaluate. We summarized the state-of-the-art QDNN neuron and structure design, and include them in QuadraLib. 
+QDNNs is a new but rapidly evovling research topic, which brrow many piror knowledge from the first-order DNNs. The current QDNNs work use different DL framework and distinct benchmarks, which is not easy to comprehensive evaluate. We summarized the state-of-the-art QDNN neuron and structure design, and implement them in QuadraLib as a individual .py [file](https://github.com/zarekxu/QuadraLib/blob/main/image_classification/models/quadratic_layer.py). 
+
+<p align="center">
+  <img src="https://github.com/zarekxu/QuadraLib/blob/main/Figures/neuron_type_summary.PNG" alt="neuron type" width="200">
+  <br>
+  <b>Figure</b>: SOTA Quadratic Neuron Types
+</p>
 
 ### Models and benchmarks for QDNN researchers
 
-QuadraLib collects current [QDNN papers](https://github.com/zarekxu/QuadraLib/blob/main/SOTA%20Papers/paper_list.md) and their key designs. It also provides many state-of-the-art [QDNN layers](https://docs.dgl.ai/api/python/nn.html) for users to build new model architectures.
+QuadraLib collects current [QDNN papers](https://github.com/zarekxu/QuadraLib/blob/main/SOTA%20Papers/paper_list.md) and their key designs. It also provides a variety of pre-defined QDNN models in multiple application scenarios (e.g. image classification, object detection) that have state-of-the-art accuracy performance. Users can also easily create their own QDNN models by using quandratic layers provided by QuadraLib, via mannually building or auto-builder. More models and application tasks will be supported in the future.  
 
-### QDNN Model Auto-builder
+### QDNN Model Definition: Manual Design and Auto-builder
 
-There are two ways to build the QDNN model structure in QuadraLib. 
+First-order DNN already has many popular and high-performance network structures such as ResNet and EfficientNet. Therefore, QDNN model structure can be built based on the existing DNN structures. 
+QudraLib provides two ways to build QDNN model structures: Manual Definition and Auto-builder. 
 
-1)  
+#### Manual Design
+Users can manually configure the model structure file in [./models] folder. Here are some insights for QDNN model design during configuration file definition: 1) since quadratic neuron has higher capability, the depth of QDNN can be reduced, thereby decrease the model computation cost and also avoids the potential gradient vanishing or model degeneration issues discussed before; 2) since second-order term will generate extreme values, batch-normalization layer is significantly important for QDNN to regulate the output activation values; 3) QDNNs with small network structures don’t need activation functions (e.g. ReLU) due to the high capability of quadratic neuron. However, when QDNN depth increases, activation functions are important since they can prevent gradient vanishing. 
 
+#### Auto-Builder:
+QuadraLib also provide function to automatically build QDNN model structure based on a baseline first-order DNN. For an existing learning task, manually designing a QDNN model from scratch needs a lot of prior domain experience and can involve significant effort, such as detector backbones. Therefore, besides to manually construct QDNN from scratch, another effective approach for efficient QDNN construction is to leverage the existing first-order DNN model pools, which already include various sophisticated pre-defined first-order DNN structure for different learning tasks.
 
 ### Analysis Tools
 
@@ -37,13 +47,16 @@ QuadraLib provides several analysis tools to help users to analyze activation, g
   <b>Figure</b>: Activation Visualization Examples
 </p>
 
+### Hybrid Back-propagation for Efficient Training (On-going)
+
+
+
 
 ## Requirements
 
-- Python (**>=3.6**)
-- PyTorch (**>=1.4.0**)
-- Tensorboard(**>=1.4.0**) (for ***visualization***)
-- Other dependencies (pyyaml, easydict)
+- Python (**=3.7**)
+- PyTorch (**=1.8.0**)
+- Other dependencies (pyyaml, easydict, tensorboard)
 
 ## Get Started 
 
@@ -63,6 +76,25 @@ python train.py --work-path ./experiments/cifar10/vgg19
 python train.py --resume --work-path ./experiments/cifar10/vgg19
 ``` 
 You can see the training curve via tensorboard, ``tensorboard --logdir path-to-event --port your-port``.  
+
+For auto-builder, run the cmd to get the important score of each layer. 
+
+
+Two pre-trained QDNN models (QVGG-7 and QResNet14) can be found in [./checkpoint]()
+
+#### Performance
+
+| architecture          | params | batch size | epoch | CIFAR-10 test acc (%) | CIFAR-100 test acc (%) |
+| :-------------------- | :----: | :--------: | :---: | :--------------: | :---------------: |
+| VGG-13                |  14.7M |    256     |  200  |      xx.xx       |       xx.xx       |
+| QVGG-7                |  12.0M |    256     |  200  |      94.13       |       xx.xx       |
+| ResNet32              |  0.48M |    256     |  200  |      92.83       |       xx.xx       |
+| QResNet14             |  0.39M |    256     |  200  |      93.23       |       xx.xx       |
+
+
+
+
+### Object Detection
 
 
 ### Quadratic Neuron Layers
