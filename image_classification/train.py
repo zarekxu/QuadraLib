@@ -76,7 +76,7 @@ if args.resume:
     # Load checkpoint.
     print('==> Resuming from checkpoint..')
     assert os.path.isdir('checkpoint'), 'Error: no checkpoint directory found!'
-    checkpoint = torch.load('./checkpoint/EP1/vgg10_1st_cifar10.pth')
+    checkpoint = torch.load('./checkpoint/vgg10_1st_cifar10.pth')
     net.load_state_dict(checkpoint['net'])
     best_acc = checkpoint['acc']
     start_epoch = checkpoint['epoch']
@@ -87,7 +87,7 @@ optimizer = optim.SGD(net.parameters(), lr=config.learning_rate,
 
 scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max = config.epoch, eta_min = 0.00001, last_epoch = -1)
 
-writer = SummaryWriter('runs/EP1/vgg10_1st_cifar10')
+writer = SummaryWriter('runs/vgg10_1st_cifar10')
 
 
 # Training
@@ -149,7 +149,7 @@ def test(epoch):
         }
         if not os.path.isdir('checkpoint'):
             os.mkdir('checkpoint')
-        torch.save(state, './checkpoint/EP1/vgg10_1st_cifar10.pth')
+        torch.save(state, './checkpoint/vgg10_1st_cifar10.pth')
         best_acc = acc
 
 

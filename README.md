@@ -80,7 +80,9 @@ You can see the training curve via tensorboard, ``tensorboard --logdir path-to-e
 For auto-builder, run the cmd to get the important score of each layer. 
 
 
+
 Two pre-trained QDNN models (QVGG-7 and QResNet14) can be found in [./checkpoint](https://github.com/zarekxu/QuadraLib/tree/main/image_classification/checkpoint)
+
 
 #### Performance
 
