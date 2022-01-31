@@ -1,0 +1,32 @@
+# net architecture
+architecture: resnet32
+
+# log and checkpoint
+data_path: ./data
+# ckpt_path: ./
+# ckpt_name: vgg19
+
+# datasets
+num_classes: 10
+dataset: cifar10 
+
+#augmentation
+augmentation:
+  normalize: True
+  random_crop: True
+  random_horizontal_filp: True
+  cutout: False
+  holes: 1
+  length: 8
+
+
+# training parameters
+epoch: 200
+input_size: 32
+learning_rate: 0.1
+batch_size: 256
+test_batch: 256
+# eval_freq: 2
+workers: 4
+
+
