@@ -24,7 +24,9 @@ Quadratic Deep Neural Network is a new but rapidly evovling research topic, whic
 
 ### Models and benchmarks for QDNN researchers
 
+
 QuadraLib collects the current [QDNN papers](https://github.com/zarekxu/QuadraLib/blob/main/SOTA%20Papers/paper_list.md) and their key designs. It also provides a variety of pre-defined QDNN models in multiple application scenarios (e.g. image classification, object detection, image generation) that achieve the state-of-the-art accuracy performance. Currently, QuadraLib provides pre-trained VGGNet and ResNet models with CIFAR-10/CIFAR-100 in image classification and VGG-based SSD with VOC2007 in object detection.
+
 Users can also easily create their own QDNN models by using quandratic layers provided by QuadraLib, via mannually building or auto-builder. More models and application tasks will be supported in the future.  
 
 ### QDNN Model Definition: Manual Design and Auto-builder
@@ -73,12 +75,12 @@ All the configurations are defined in yaml filed ``config.yaml``, please check a
 simply run the cmd for the training:
 
 ```bash
-## 1 GPU for vgg11 training from scratch
-python train.py --work-path ./experiments/cifar10/vgg19
+## 1 GPU for qvgg7 training from scratch
+python train.py --work-path ./experiments/cifar_vgg/
 ``` 
 ```bash
-## 1 GPU for vgg11 training from checkpoint
-python train.py --resume --work-path ./experiments/cifar10/vgg19
+## 1 GPU for qresnet14 training from checkpoint
+python train.py --resume --work-path ./experiments/cifar_resnet/
 ``` 
 You can see the training curve via tensorboard, ``tensorboard --logdir path-to-event --port your-port``.  
 
