@@ -69,12 +69,12 @@ All the configurations are defined in yaml filed ``config.yaml``, please check a
 simply run the cmd for the training:
 
 ```bash
-## 1 GPU for vgg11 training from scratch
-python train.py --work-path ./experiments/cifar10/vgg19
+## 1 GPU for qvgg7 training from scratch
+python train.py --work-path ./experiments/cifar_vgg/
 ``` 
 ```bash
-## 1 GPU for vgg11 training from checkpoint
-python train.py --resume --work-path ./experiments/cifar10/vgg19
+## 1 GPU for qresnet14 training from checkpoint
+python train.py --resume --work-path ./experiments/cifar_resnet/
 ``` 
 You can see the training curve via tensorboard, ``tensorboard --logdir path-to-event --port your-port``.  
 
