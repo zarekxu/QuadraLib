@@ -105,7 +105,7 @@ Two pre-trained QDNN models (QVGG-7 and QResNet14) can be found in [./checkpoint
 
 ### Object Detection
 
-Currently, QuadraLib includes Single Shot MultiBox Detector (SSD) structure and the backbone model is VGG-16. More detction design (e.g. Mask RCNN and YOLO) will be supported in the future. 
+Currently, QuadraLib includes Single Shot MultiBox Detector (SSD) structure and the backbone model is VGG-16. More detction design (e.g. Mask RCNN and YOLO) will be supported in the future. The SSD repo is highly based on [a-PyTorch-Tutorial-to-Object-Detection](https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Object-Detection) on Github.
 
 simply run the cmd for the SSD training:
 
