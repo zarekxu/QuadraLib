@@ -67,62 +67,7 @@ QuadraLib provides several analysis tools to help users to analyze activation, g
 
 ## Get Started 
 
-Users can find the two application tasks in [./image_classification]() and [./object_detection](). More recognition tasks will be added in the future. 
-All the configurations are defined in yaml filed ``config.yaml``, please check any files in `./image_classification/experimets` for more details. 
-
-
-### Image Classification
-simply run the cmd for the training:
-
-```bash
-## 1 GPU for qvgg7 training from scratch
-python train.py --work-path ./experiments/cifar_vgg/
-``` 
-```bash
-## 1 GPU for qresnet14 training from checkpoint
-python train.py --resume --work-path ./experiments/cifar_resnet/
-``` 
-You can see the training curve via tensorboard, ``tensorboard --logdir path-to-event --port your-port``.  
-
-For auto-builder, run the cmd to get the important score of each layer. 
-
-
-
-Two pre-trained QDNN models (QVGG-7 and QResNet14) can be found in [./checkpoint](https://github.com/zarekxu/QuadraLib/tree/main/image_classification/checkpoint)
-
-
-#### Performance
-
-| architecture          | params | batch size | epoch | CIFAR-10 test acc (%) | CIFAR-100 test acc (%) |
-| :-------------------- | :----: | :--------: | :---: | :--------------: | :---------------: |
-| VGG-13                |  14.7M |    256     |  200  |      93.61       |       xx.xx       |
-| QVGG-7                |  12.0M |    256     |  200  |      94.13       |       xx.xx       |
-| ResNet32              |  0.48M |    256     |  200  |      92.83       |       xx.xx       |
-| QResNet14             |  0.39M |    256     |  200  |      93.23       |       xx.xx       |
-
-
-
-
-### Object Detection
-
-Currently, QuadraLib includes Single Shot MultiBox Detector (SSD) structure and the backbone model is VGG-16. More detction design (e.g. Mask RCNN and YOLO) will be supported in the future. The SSD repo is highly based on [a-PyTorch-Tutorial-to-Object-Detection](https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Object-Detection) on Github. 
-
-The pre-processed dataset can be downloaded via [link](https://drive.google.com/file/d/1_RxZuPjWJ0IDVCt2DJ15dsAmRtF6SwWy/view?usp=sharing). 
-
-Simply run the cmd for the SSD training:
-
-```bash
-## 1 GPU for training from scratch
-python train.py
-``` 
-
-
-
-
-
-### Quadratic Neuron Layers
-
-We reproduced all the state-of-the-art quadratic neuron design as Quadratic Layers, users can find them in [here](https://github.com/zarekxu/QuadraLib/blob/main/image_classification/models/quadratic_layer.py)
+Users can find the two application tasks in [./image_classification](https://github.com/zarekxu/QuadraLib/tree/main/image_classification) and [./object_detection](https://github.com/zarekxu/QuadraLib). The step-by-step training and evaluation instructions are included in README file in the two folders, separately.  More recognition tasks will be added in the future. 
 
 
 ## Cite
