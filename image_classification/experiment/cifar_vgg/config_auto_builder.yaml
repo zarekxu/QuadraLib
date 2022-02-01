@@ -1,5 +1,8 @@
 # net architecture
 architecture: qvgg13
+layernumber: 13
+layer: [0, 3, 7, 10, 14, 17, 20, 24, 27, 30, 34, 37, 40]
+masking_ratio: 0.5
 
 # log and checkpoint
 data_path: ./data
@@ -20,13 +23,12 @@ augmentation:
   length: 8
 
 
-# training parameters
-epoch: 200
+# configuration parameters
 input_size: 32
-learning_rate: 0.1
 batch_size: 256
 test_batch: 256
 # eval_freq: 2
 workers: 4
+
 
 
