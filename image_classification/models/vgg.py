@@ -2,7 +2,7 @@
 import torch.nn as nn
 from .quadratic_layer import Quadraour, Type1, Type2, Type3, Type4
 
-__all__ = ["vgg11", "vgg13", "vgg16", "vgg19", "qvgg7"]
+__all__ = ["vgg11", "vgg13", "vgg16", "vgg19", "qvgg7", "qvgg13"]
 
 cfg = {
     "A": [64, "M", 128, "M", 256, 256, "M", 512, 512, "M", 512, 512, "M"],
