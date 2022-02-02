@@ -9,4 +9,4 @@ Simply run the cmd for the SSD training:
 ```bash
 ## 1 GPU for training from scratch
 python train.py
-``` 
+

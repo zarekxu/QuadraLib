@@ -22,10 +22,13 @@ Two pre-trained QDNN models (QVGG-7 and QResNet14) can be found in [./checkpoint
 
 
 ### Auto-builder
-For auto-builder, QuadraLib provides the auto_builder.py to calculate the accuracy importance of each layer. Users need to first 
 
-
-run the cmd to get the important score of each layer. 
+The guideline of using auto-builder to identify a QDNN model structure has following steps:   
+1) Replace an existing first-order DNN with target quadratic layers in both config.yaml file and add model name in model definition file. 
+2) Traing the model and save .pth file in ./checkpoint folder.
+3) Configure config_auto_builder.yaml file. Specifically, layernumber represent the total convolution layer number in the model and layer_index is their layer index, masking_ratio indicate how the masked weights ratio in each layer. 
+4) Run auto_builder.py file to measuer the accuracy importance of each layer. 
+5) Calcualte the find score according to the equation ![equation](https://latex.codecogs.com/png.image?\dpi{80}&space;RI=\frac{P_{M}&space;P_{W}}{\delta_A}&space;).
 
 
 ### Performance
