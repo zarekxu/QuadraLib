@@ -22,6 +22,7 @@ Two pre-trained QDNN models (QVGG-7 and QResNet14) can be found in [./checkpoint
 
 
 ### Auto-builder
+
 The guideline of using auto-builder to identify a QDNN model structure has following steps:   
 1) Replace an existing first-order DNN with target quadratic layers in both config.yaml file and add model name in model definition file. 
 2) Traing the model and save .pth file in ./checkpoint folder.
