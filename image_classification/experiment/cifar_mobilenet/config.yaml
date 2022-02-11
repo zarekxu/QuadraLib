@@ -1,5 +1,5 @@
 # net architecture
-architecture: mobilenet13
+architecture: qmobilenet13
 
 # log and checkpoint
 data_path: ./data

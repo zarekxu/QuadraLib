@@ -1,5 +1,6 @@
 # https://github.com/jmjeon94/MobileNet-Pytorch/blob/master/MobileNetV1.py
 
+import torch
 import torch.nn as nn
 from torchsummary import summary
 from quadratic_layer import Quadraour, Type1, Type2, Type3, Type4
@@ -71,7 +72,7 @@ class QMobileNet(MobileNetV1):
                 nn.ReLU(inplace=True),
 
                 # pw
-                Quadraour(inp, oup, 1, 1, 1, 1),
+                nn.Conv2d(inp, oup, 1, 1, 0, bias=False),
                 nn.BatchNorm2d(oup),
                 nn.ReLU(inplace=True),
                 )
@@ -96,12 +97,11 @@ class QMobileNet(MobileNetV1):
 
 
 def qmobilenet13(num_classes):
-    return 
+    return QMobileNet(3, num_classes)
 
 def mobilenet13(num_classes):
     return MobileNetV1(3, num_classes)
 
 if __name__=='__main__':
-    # model check
-    model = MobileNetV1(ch_in=3, n_classes=1000)
-    summary(model, input_size=(3, 224, 224), device='cpu')
+    net = qmobilenet13(10)
+    summary(net, (3, 32, 32), 256)
