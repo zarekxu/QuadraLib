@@ -149,16 +149,18 @@ def test(epoch):
         }
         if not os.path.isdir('checkpoint'):
             os.mkdir('checkpoint')
-        torch.save(state, './checkpoint/qvgg13_cifar10.pth')
+        # torch.save(state, './checkpoint/qvgg13_cifar10.pth')
+        torch.save(state, "./checkpoint/mobilenet13_cifar10.pth")
         best_acc = acc
 
 
 
 
 
-for epoch in range(start_epoch, start_epoch+config.epoch):
-    # a = time.time()
-    train(epoch)
-    scheduler.step()
-    # print("training time is:", time.time()-a)
-    test(epoch)
+if __name__=="__main__":
+    for epoch in range(start_epoch, start_epoch+config.epoch):
+        # a = time.time()
+        train(epoch)
+        scheduler.step()
+        # print("training time is:", time.time()-a)
+        test(epoch)
