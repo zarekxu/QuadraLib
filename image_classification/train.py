@@ -45,6 +45,7 @@ with open(args.work_path + "/config.yaml") as f:
 # convert to dict
 config = EasyDict(config)
 
+config_name = config.architecture + '_' + config.dataset
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 best_acc = 0  # best test accuracy
 start_epoch = 0  # start from epoch 0 or last checkpoint epoch
@@ -76,7 +77,7 @@ if args.resume:
     # Load checkpoint.
     print('==> Resuming from checkpoint..')
     assert os.path.isdir('checkpoint'), 'Error: no checkpoint directory found!'
-    checkpoint = torch.load('./checkpoint/qvgg13_cifar10.pth')
+    checkpoint = torch.load('./checkpoint/' + config_name + '.pth')
     net.load_state_dict(checkpoint['net'])
     best_acc = checkpoint['acc']
     start_epoch = checkpoint['epoch']
@@ -87,7 +88,7 @@ optimizer = optim.SGD(net.parameters(), lr=config.learning_rate,
 
 scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max = config.epoch, eta_min = 0.00001, last_epoch = -1)
 
-writer = SummaryWriter('runs/qvgg13_cifar10')
+writer = SummaryWriter('runs/' + config_name)
 
 
 # Training
@@ -149,8 +150,7 @@ def test(epoch):
         }
         if not os.path.isdir('checkpoint'):
             os.mkdir('checkpoint')
-        # torch.save(state, './checkpoint/qvgg13_cifar10.pth')
-        torch.save(state, "./checkpoint/mobilenet13_cifar10.pth")
+        torch.save(state, "./checkpoint/" + config_name + ".pth")
         best_acc = acc
 
 
