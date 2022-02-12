@@ -36,6 +36,7 @@ parser = argparse.ArgumentParser(description='PyTorch CIFAR Dataset Training')
 parser.add_argument('--work-path', required=True, type=str)
 parser.add_argument('--resume', '-r', action='store_true',
                     help='resume from checkpoint')
+parser.add_argument('--test', '-t', action='store_true', help='Test only flag')
 
 args = parser.parse_args()
 
@@ -46,6 +47,7 @@ with open(args.work_path + "/config.yaml") as f:
 config = EasyDict(config)
 
 config_name = config.architecture + '_' + config.dataset
+print('==> config name: ', config_name)
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 best_acc = 0  # best test accuracy
 start_epoch = 0  # start from epoch 0 or last checkpoint epoch
@@ -66,14 +68,14 @@ print('==> Building model..')
 # net = vgg()
 net = get_model(config)
 
-print(net)
+if not args.test: print(net)
 
 net = net.to(device)
 if device == 'cuda':
     # net = torch.nn.DataParallel(net)
     cudnn.benchmark = True
 
-if args.resume:
+if args.test or args.resume:
     # Load checkpoint.
     print('==> Resuming from checkpoint..')
     assert os.path.isdir('checkpoint'), 'Error: no checkpoint directory found!'
@@ -119,7 +121,7 @@ def train(epoch):
                      % (train_loss/(batch_idx+1), 100.*correct/total, correct, total))
         
 
-def test(epoch):
+def test(epoch, only_test=False):
     global best_acc
     net.eval()
     test_loss = 0
@@ -139,8 +141,14 @@ def test(epoch):
             progress_bar(batch_idx, len(testloader), 'Loss: %.3f | Acc: %.3f%% (%d/%d)'
                          % (test_loss/(batch_idx+1), 100.*correct/total, correct, total))
 
+
     # Save checkpoint.
     acc = 100.*correct/total
+
+    if only_test:
+        print("\nACC: %.3f%%" % acc)
+        return
+
     if acc > best_acc:
         print('Saving..')
         state = {
@@ -158,9 +166,12 @@ def test(epoch):
 
 
 if __name__=="__main__":
-    for epoch in range(start_epoch, start_epoch+config.epoch):
-        # a = time.time()
-        train(epoch)
-        scheduler.step()
-        # print("training time is:", time.time()-a)
-        test(epoch)
+    if args.test:
+        test(0, only_test=True)
+    else:
+        for epoch in range(start_epoch, start_epoch+config.epoch):
+            # a = time.time()
+            train(epoch)
+            scheduler.step()
+            # print("training time is:", time.time()-a)
+            test(epoch)
