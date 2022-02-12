@@ -3,7 +3,7 @@
 import torch
 import torch.nn as nn
 from torchsummary import summary
-from quadratic_layer import Quadraour, Type1, Type2, Type3, Type4
+from .quadratic_layer import Quadraour, Type1, Type2, Type3, Type4
 class MobileNetV1(nn.Module):
     def __init__(self, ch_in, n_classes):
         super(MobileNetV1, self).__init__()
