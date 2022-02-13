@@ -3,11 +3,11 @@ import torch.nn.functional as F
 import torch
 
 class Quadraour(nn.Module):
-	def __init__(self, in_channels, out_channels, kernel_size, stride, padding, dilation):
+	def __init__(self, in_channels, out_channels, kernel_size, stride, padding, dilation, groups=1):
 		super(Quadraour, self).__init__()
-		self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size , stride, padding, dilation)
-		self.conv2 = nn.Conv2d(in_channels, out_channels, kernel_size , stride, padding, dilation)
-		self.conv3 = nn.Conv2d(in_channels, out_channels, kernel_size , stride, padding, dilation)
+		self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size , stride, padding, dilation, groups)
+		self.conv2 = nn.Conv2d(in_channels, out_channels, kernel_size , stride, padding, dilation, groups)
+		self.conv3 = nn.Conv2d(in_channels, out_channels, kernel_size , stride, padding, dilation, groups)
 		self.bn1 = nn.BatchNorm2d(out_channels)
 		self.bn2 = nn.BatchNorm2d(out_channels)
 		self.bn3 = nn.BatchNorm2d(out_channels)
