@@ -119,8 +119,6 @@ def test(epoch, nlayer, p):
                          % (test_loss/(batch_idx+1), 100.*correct/total, correct, total))
 
 
-
-for epoch in range(0, config.layernumber):
-    
-
-    test(epoch, config.layer_index[epoch], config.masking_ratio)
+if __name__=="__main__":
+    for epoch in range(0, config.layernumber):
+        test(epoch, config.layer_index[epoch], config.masking_ratio)

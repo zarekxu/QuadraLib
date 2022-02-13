@@ -6,12 +6,12 @@ The training step is simple, by runing the cmd for the training:
 
 ```bash
 ## 1 GPU for qvgg7 training from scratch
-python train.py --work-path ./experiments/cifar_vgg/
+python train.py --work-path ./experiment/cifar_vgg/
 ``` 
 
 ```bash
 ## 1 GPU for qresnet14 training from checkpoint
-python train.py --resume --work-path ./experiments/cifar_resnet/
+python train.py --resume --work-path ./experiment/cifar_resnet/
 ``` 
 The checkpoint folder and tensorboard cache folder are defined in train.py, users can modify with their own path. 
 
