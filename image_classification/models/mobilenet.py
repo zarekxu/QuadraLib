@@ -67,7 +67,7 @@ class QMobileNet(MobileNetV1):
         def conv_dw_qua(inp, oup, stride):
             return nn.Sequential(
                 # dw
-                Quadraour(inp, inp, 3, stride, 1, 1, groups=inp),
+                Quadraour(inp, inp, 3, stride, 1, 1),
                 nn.BatchNorm2d(inp),
                 nn.ReLU(inplace=True),
 
