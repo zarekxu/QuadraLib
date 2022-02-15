@@ -14,6 +14,8 @@ import torch.nn as nn
 import torch.nn.init as init
 import torchvision.transforms as transforms
 
+from TinyImageNetDataset import TinyImageNetDataset
+
 
 def get_mean_and_std(dataset):
     '''Compute the mean and std value of dataset.'''
@@ -152,7 +154,8 @@ def load_checkpoint(path, model, optimizer=None):
 
 
 def get_data_loader(transform_train, transform_test, config):
-    assert config.dataset == "cifar10" or config.dataset == "cifar100"
+    # assert config.dataset == "cifar10" or config.dataset == "cifar100"
+    
     if config.dataset == "cifar10":
         trainset = torchvision.datasets.CIFAR10(
             root=config.data_path, train=True, download=True, transform=transform_train
@@ -161,13 +164,21 @@ def get_data_loader(transform_train, transform_test, config):
         testset = torchvision.datasets.CIFAR10(
             root=config.data_path, train=False, download=True, transform=transform_test
         )
-    else:
+    elif config.dataset == "cifar100":
         trainset = torchvision.datasets.CIFAR100(
             root=config.data_path, train=True, download=True, transform=transform_train
         )
 
         testset = torchvision.datasets.CIFAR100(
             root=config.data_path, train=False, download=True, transform=transform_test
+        )
+    elif config.dataset == "tiny-imagenet":
+        trainset = TinyImageNetDataset(
+            root=config.data_path, download=True, mode='train', task='classification', transform=transform_train
+        )
+
+        testset = TinyImageNetDataset(
+            root=config.data_path, download=True, mode='val', task ='classification', transform=transform_test
         )
 
     train_loader = torch.utils.data.DataLoader(
@@ -198,9 +209,13 @@ def data_augmentation(config, is_train=True):
             aug.append(
                 transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
             )
-        else:
+        elif config.dataset == "cifar100":
             aug.append(
                 transforms.Normalize((0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761))
+            )
+        elif config.dataset == "tiny-imagenet":
+            aug.append(
+                transforms.Normalize((0.4775, 0.4806, 0.4805), (0.1592, 0.1611, 0.1653))
             )
 
     if is_train and config.augmentation.cutout:
@@ -209,3 +224,4 @@ def data_augmentation(config, is_train=True):
             Cutout(n_holes=config.augmentation.holes, length=config.augmentation.length)
         )
     return aug
+
