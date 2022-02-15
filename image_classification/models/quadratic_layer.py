@@ -3,11 +3,11 @@ import torch.nn.functional as F
 import torch
 
 class Quadraour(nn.Module):
-	def __init__(self, in_channels, out_channels, kernel_size, stride, padding, dilation):
+	def __init__(self, in_channels, out_channels, kernel_size, stride, padding, dilation, groups, bias):
 		super(Quadraour, self).__init__()
-		self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size , stride, padding, dilation)
-		self.conv2 = nn.Conv2d(in_channels, out_channels, kernel_size , stride, padding, dilation)
-		self.conv3 = nn.Conv2d(in_channels, out_channels, kernel_size , stride, padding, dilation)
+		self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size , stride, padding, dilation, groups, bias)
+		self.conv2 = nn.Conv2d(in_channels, out_channels, kernel_size , stride, padding, dilation, groups, bias)
+		self.conv3 = nn.Conv2d(in_channels, out_channels, kernel_size , stride, padding, dilation, groups, bias)
 		self.bn1 = nn.BatchNorm2d(out_channels)
 		self.bn2 = nn.BatchNorm2d(out_channels)
 		self.bn3 = nn.BatchNorm2d(out_channels)
@@ -26,7 +26,7 @@ class Quadraour(nn.Module):
 
 
 class Type1(nn.Module):
-    def __init__(self, in_channels, out_channels, kernel_size, stride, padding, dilation):
+    def __init__(self, in_channels, out_channels, kernel_size, stride, padding, dilation, groups, bias):
         super(Type1, self).__init__()
         self.in_channels = in_channels
         self.out_channels = out_channels
@@ -35,7 +35,7 @@ class Type1(nn.Module):
         self.padding = padding
         self.dilation = dilation
 
-        self.bilconv = nn.Bilinear(kernel_size*kernel_size*in_channels, kernel_size*kernel_size*in_channels, out_channels, bias = False)
+        self.bilconv = nn.Bilinear(kernel_size*kernel_size*in_channels, kernel_size*kernel_size*in_channels, out_channels, bias = bias)
 
 
 
@@ -72,9 +72,9 @@ class Type3(nn.Module):
 
 
 class Type2(nn.Module):
-	def __init__(self, in_channels, out_channels, kernel_size, stride, padding, dilation):
+	def __init__(self, in_channels, out_channels, kernel_size, stride, padding, dilation, groups, bias):
 		super(Type2, self).__init__()
-		self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size, stride, padding, dilation)
+		self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size, stride, padding, dilation, groups, bias)
         
 	def forward(self,x):
         
@@ -83,10 +83,10 @@ class Type2(nn.Module):
 
 
 class Type4(nn.Module):
-	def __init__(self, in_channels, out_channels, kernel_size, stride, padding, dilation):
+	def __init__(self, in_channels, out_channels, kernel_size, stride, padding, dilation, groups, bias):
 		super(Type4, self).__init__()
-		self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size, stride, padding, dilation)
-		self.conv2 = nn.Conv2d(in_channels, out_channels, kernel_size, stride, padding, dilation)
+		self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size, stride, padding, dilation, groups, bias)
+		self.conv2 = nn.Conv2d(in_channels, out_channels, kernel_size, stride, padding, dilation, groups, bias)
         
 	def forward(self,x):
         

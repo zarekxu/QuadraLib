@@ -10,7 +10,7 @@ from .vgg import *
 from .resnet import *
 # from .resnext import *
 # from .preact_resnet import *
-from .mobilenet import *
+from .mobilenet1 import *
 # from .mobilenetv2 import *
 # from .efficientnet import *
 # from .regnet import *
