@@ -50,7 +50,7 @@ def make_layers(cfg, batch_norm = False, qua = False):
             if qua == False:
                 conv2d = nn.Conv2d(in_channels, v, kernel_size = 3, padding = 1)
             elif qua == True:
-                conv2d = Quadraour(in_channels, v, kernel_size = 3, stride = 1, padding = 1, dilation = 1)
+                conv2d = Quadraour(in_channels, v, kernel_size = 3, stride = 1, padding = 1, dilation = 1, groups = 1, bias = True)
             if batch_norm:
                 layers += [conv2d, nn.BatchNorm2d(v), nn.ReLU(inplace = True)]
             else:

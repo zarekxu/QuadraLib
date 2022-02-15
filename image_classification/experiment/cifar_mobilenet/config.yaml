@@ -1,5 +1,5 @@
 # net architecture
-architecture: qmobilenet13
+architecture: qmobilenet
 
 # log and checkpoint
 data_path: ./data
@@ -21,9 +21,10 @@ augmentation:
 
 
 # training parameters
-epoch: 200
+epoch: 250
 input_size: 32
 learning_rate: 0.1
+final_learning_rate: 0.00001
 batch_size: 256
 test_batch: 256
 # eval_freq: 2

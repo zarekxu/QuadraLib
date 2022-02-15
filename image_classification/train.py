@@ -88,7 +88,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=config.learning_rate,
                       momentum=0.9, weight_decay=5e-4)
 
-scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max = config.epoch, eta_min = 0.00001, last_epoch = -1)
+scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max = config.epoch, eta_min = config.final_learning_rate, last_epoch = -1)
 
 writer = SummaryWriter('runs/' + config_name)
 
