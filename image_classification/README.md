@@ -45,6 +45,6 @@ Driver Version: 470.103.01   CUDA Version: 11.4
 
 | architecture          | params | batch size | epoch | CIFAR-10 test acc (%) | CIFAR-100 test acc (%) |
 | :-------------------- | :----: | :--------: | :---: | :--------------: | :---------------: |
-| QVGG-13               |  14.7M |    256     |  200  |      94.04       |       xx.xx       |
-| QResNet14             |        |    256     |  200  |      93.53       |                   |
-| QMobileNet            |        |    256     |  200  |      92.61       |                   |
+| QVGG-13               |  44.2M |    256     |  200  |      94.04       |       74.35       |
+| QResNet-14            |  0.52M |    256     |  200  |      93.53       |       69.48       |
+| QMobileNet            |  3.32M |    256     |  200  |      92.61       |       69.71       |

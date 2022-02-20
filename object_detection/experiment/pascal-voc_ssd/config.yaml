@@ -25,8 +25,8 @@ epoch: 232 # epochs = iterations // (len(train_loader.dataset) // 32) where iter
 input_size: 32
 learning_rate: 0.001
 final_learning_rate: 0
-batch_size: 16
-test_batch: 16
+batch_size: 32
+test_batch: 32
 # eval_freq: 2
 workers: 4
 grad_clip: None # clip if gradients are exploding, which may happen at larger batch sizes (sometimes at 32) - you will recognize it by a sorting error in the MuliBox loss calculation
