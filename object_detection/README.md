@@ -14,6 +14,6 @@ python create_data_lists.py
 python train.py --work-path ./experiment/pascal-voc_ssd
 ```
 
-To use other networks and other dataset, you have to write your own code in ```./dataloader.py``` for a Dataloader, ```./models/__init__.py``` for behaviour of the optimizer, and add the network's implementation in ```./models/```.
+To use other networks and other dataset, you have to write your own code in ```./dataloader.py``` for a dataloader, ```./models/__init__.py``` for the behaviour of the optimizer, and add the network's code in ```./models/```.
 
 By default, the checkpoints of trained models are saved in ```./checkpoint/```, datasets are saved in ```./data/```, and configurations for different training settings are stored in ```./experiement/```. You have to specify the path of the training settings while running the ```./train.py```.
