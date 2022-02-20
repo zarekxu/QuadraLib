@@ -1,60 +1,55 @@
+import yaml
+import argparse
 import time
 import torch.backends.cudnn as cudnn
 import torch.optim
 import torch.utils.data
-from model import SSD300, MultiBoxLoss
-from datasets import PascalVOCDataset
+from model import MultiBoxLoss
+from dataloader import get_data_loader
 from utils import *
 
-# Data parameters
-data_folder = './'  # folder with data files
-keep_difficult = True  # use objects considered difficult to detect?
+from models import get_model, get_optim, update_optim
 
-# Model parameters
-# Not too many here since the SSD300 has a very specific structure
-n_classes = len(label_map)  # number of different types of objects
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+from easydict import EasyDict
 
-# Learning parameters
-checkpoint = None  # path to model checkpoint, None if none
-batch_size = 16  # batch size
-iterations = 120000  # number of iterations to train
-workers = 4  # number of workers for loading data in the DataLoader
+parser = argparse.ArgumentParser(description='Object Detection')
+parser.add_argument('--work-path', required=True, type=str)
+parser.add_argument('--resume', '-r', action='store_true',
+                    help='resume from checkpoint')
+# parser.add_argument('--test', '-t', action='store_true', help='Test only flag')
+
+args = parser.parse_args()
+
+with open(args.work_path + "/config.yaml") as f:
+    config = yaml.safe_load(f)
+config = EasyDict(config)
+
+config_name = config.architecture + '_' + config.dataset
+print('==> config name: ', config_name)
+
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
 print_freq = 200  # print training status every __ batches
-lr = 1e-3  # learning rate
-decay_lr_at = [80000, 100000]  # decay learning rate after these many iterations
-decay_lr_to = 0.1  # decay learning rate to this fraction of the existing learning rate
-momentum = 0.9  # momentum
-weight_decay = 5e-4  # weight decay
-grad_clip = None  # clip if gradients are exploding, which may happen at larger batch sizes (sometimes at 32) - you will recognize it by a sorting error in the MuliBox loss calculation
+# Learning parameters
 
 cudnn.benchmark = True
 
-
-def main():
+def main(config):
     """
     Training.
     """
-    global start_epoch, label_map, epoch, checkpoint, decay_lr_at
+    global start_epoch, label_map, checkpoint
 
     # Initialize model or load checkpoint
-    if checkpoint is None:
+    if not args.resume:
         start_epoch = 0
-        model = SSD300(n_classes=n_classes)
-        # Initialize the optimizer, with twice the default learning rate for biases, as in the original Caffe repo
-        biases = list()
-        not_biases = list()
-        for param_name, param in model.named_parameters():
-            if param.requires_grad:
-                if param_name.endswith('.bias'):
-                    biases.append(param)
-                else:
-                    not_biases.append(param)
-        optimizer = torch.optim.SGD(params=[{'params': biases, 'lr': 2 * lr}, {'params': not_biases}],
-                                    lr=lr, momentum=momentum, weight_decay=weight_decay)
+
+        model = get_model(config)
+        optimizer = get_optim(model, config)
 
     else:
-        checkpoint = torch.load(checkpoint)
+        ckpt_path = os.path.join('./checkpoint/' + config_name + '.pth')
+        checkpoint = torch.load(ckpt_path)
         start_epoch = checkpoint['epoch'] + 1
         print('\nLoaded checkpoint from epoch %d.\n' % start_epoch)
         model = checkpoint['model']
@@ -64,26 +59,18 @@ def main():
     model = model.to(device)
     criterion = MultiBoxLoss(priors_cxcy=model.priors_cxcy).to(device)
 
-    # Custom dataloaders
-    train_dataset = PascalVOCDataset(data_folder,
-                                     split='train',
-                                     keep_difficult=keep_difficult)
-    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True,
-                                               collate_fn=train_dataset.collate_fn, num_workers=workers,
-                                               pin_memory=True)  # note that we're passing the collate function here
+    # Data Loader
+    train_loader, test_loader = get_data_loader(config)
 
     # Calculate total number of epochs to train and the epochs to decay learning rate at (i.e. convert iterations to epochs)
     # To convert iterations to epochs, divide iterations by the number of iterations per epoch
     # The paper trains for 120,000 iterations with a batch size of 32, decays after 80,000 and 100,000 iterations
-    epochs = iterations // (len(train_dataset) // 32)
-    decay_lr_at = [it // (len(train_dataset) // 32) for it in decay_lr_at]
 
     # Epochs
-    for epoch in range(start_epoch, epochs):
+    for epoch in range(start_epoch, epoch_from(config)):
 
         # Decay learning rate at particular epochs
-        if epoch in decay_lr_at:
-            adjust_learning_rate(optimizer, decay_lr_to)
+        update_optim(optimizer, epoch, config)
 
         # One epoch's training
         train(train_loader=train_loader,
@@ -92,8 +79,11 @@ def main():
               optimizer=optimizer,
               epoch=epoch)
 
+        validate()
+
         # Save checkpoint
-        save_checkpoint(epoch, model, optimizer)
+        save_checkpoint(os.path.join('./checkpoint', config_name + '.pth'),
+                        epoch, model, optimizer)
 
 
 def train(train_loader, model, criterion, optimizer, epoch):
@@ -134,8 +124,8 @@ def train(train_loader, model, criterion, optimizer, epoch):
         loss.backward()
 
         # Clip gradients, if necessary
-        if grad_clip is not None:
-            clip_gradient(optimizer, grad_clip)
+        if config.grad_clip != "None":
+            clip_gradient(optimizer, config.grad_clip)
 
         # Update model
         optimizer.step()
@@ -155,6 +145,8 @@ def train(train_loader, model, criterion, optimizer, epoch):
                                                                   data_time=data_time, loss=losses))
     del predicted_locs, predicted_scores, images, boxes, labels  # free some memory since their histories may be stored
 
+def validate():
+    print("NOT IMPLEMENTED YET")
 
 if __name__ == '__main__':
-    main()
+    main(config)

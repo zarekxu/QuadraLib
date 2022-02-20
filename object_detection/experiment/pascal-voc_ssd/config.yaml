@@ -1,0 +1,40 @@
+# net architecture
+architecture: SSD300
+
+# log and checkpoint
+data_path: ./data/pascalVOC/path
+# ckpt_path: ./
+# ckpt_name: vgg19
+
+# datasets
+num_classes: 21
+dataset: pascal-voc 
+keep_difficult: True
+
+#augmentation
+# augmentation:
+#   normalize: True
+#   random_crop: True
+#   random_horizontal_filp: True
+#   cutout: False
+#   holes: 1
+#   length: 8
+
+# training parameters
+epoch: 232 # epochs = iterations // (len(train_loader.dataset) // 32) where iterations = 120000
+input_size: 32
+learning_rate: 0.001
+final_learning_rate: 0
+batch_size: 32
+test_batch: 32
+# eval_freq: 2
+workers: 4
+grad_clip: None # clip if gradients are exploding, which may happen at larger batch sizes (sometimes at 32) - you will recognize it by a sorting error in the MuliBox loss calculation
+
+#optimizer
+optim:
+  optimizer: SGD
+  momentum: 0.9
+  weight_decay: 5e-4
+  decay_rate: 0.1
+  decay_at: [154, 190] # decay_lr_at = [it // (len(train_loader.dataset) // 32) for it in [80000,100000]]

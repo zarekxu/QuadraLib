@@ -638,7 +638,7 @@ def transform(image, boxes, labels, difficulties, split):
     return new_image, new_boxes, new_labels, new_difficulties
 
 
-def adjust_learning_rate(optimizer, scale):
+def adjust_learning_rate(optimizer, scale, lr_min=0):
     """
     Scale learning rate by a specified factor.
 
@@ -646,7 +646,7 @@ def adjust_learning_rate(optimizer, scale):
     :param scale: factor to multiply learning rate with.
     """
     for param_group in optimizer.param_groups:
-        param_group['lr'] = param_group['lr'] * scale
+        param_group['lr'] = max(param_group['lr'] * scale, lr_min)
     print("DECAYING learning rate.\n The new LR is %f\n" % (optimizer.param_groups[1]['lr'],))
 
 
@@ -666,10 +666,11 @@ def accuracy(scores, targets, k):
     return correct_total.item() * (100.0 / batch_size)
 
 
-def save_checkpoint(epoch, model, optimizer):
+def save_checkpoint(ckpt_path, epoch, model, optimizer):
     """
     Save model checkpoint.
 
+    :param ckpt_path: path to the checkpoint file
     :param epoch: epoch number
     :param model: model
     :param optimizer: optimizer
@@ -677,8 +678,7 @@ def save_checkpoint(epoch, model, optimizer):
     state = {'epoch': epoch,
              'model': model,
              'optimizer': optimizer}
-    filename = 'checkpoint_ssd300.pth.tar'
-    torch.save(state, filename)
+    torch.save(state, ckpt_path)
 
 
 class AverageMeter(object):
@@ -713,3 +713,16 @@ def clip_gradient(optimizer, grad_clip):
         for param in group['params']:
             if param.grad is not None:
                 param.grad.data.clamp_(-grad_clip, grad_clip)
+
+def epoch_from(config):
+    """
+    True epochs to run.
+    """
+    if config.epoch is not None:
+        return config.epoch
+    elif config.iterations:
+        return 
+
+
+if __name__=="__main__":
+    print(len(label_map))

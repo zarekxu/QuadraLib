@@ -1,5 +1,5 @@
 from utils import *
-from datasets import PascalVOCDataset
+from PascalVOCDataset import PascalVOCDataset
 from tqdm import tqdm
 from pprint import PrettyPrinter
 
@@ -7,7 +7,7 @@ from pprint import PrettyPrinter
 pp = PrettyPrinter()
 
 # Parameters
-data_folder = './'
+data_folder = './data/pascalVOC/path'
 keep_difficult = True  # difficult ground truth objects must always be considered in mAP calculation, because these objects DO exist!
 batch_size = 64
 workers = 4
