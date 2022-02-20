@@ -39,3 +39,12 @@ The guideline of using auto-builder to identify a QDNN model structure has follo
 | QVGG-7                |  12.0M |    256     |  200  |      94.13       |       xx.xx       |
 | ResNet32              |  0.48M |    256     |  200  |      92.83       |       xx.xx       |
 | QResNet14             |  0.39M |    256     |  200  |      93.23       |       xx.xx       |
+
+
+Driver Version: 470.103.01   CUDA Version: 11.4
+
+| architecture          | params | batch size | epoch | CIFAR-10 test acc (%) | CIFAR-100 test acc (%) |
+| :-------------------- | :----: | :--------: | :---: | :--------------: | :---------------: |
+| QVGG-13               |  14.7M |    256     |  200  |      94.04       |       xx.xx       |
+| QResNet14             |        |    256     |  200  |      93.53       |                   |
+| QMobileNet            |        |    256     |  200  |      92.61       |                   |
