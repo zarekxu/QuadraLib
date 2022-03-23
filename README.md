@@ -54,7 +54,14 @@ QuadraLib provides several analysis tools to help users to analyze activation, g
   <b>Figure 3</b>: Activation Visualization Examples
 </p>
 
-### Hybrid Back-propagation for Efficient Training (On-going)
+### Hybrid Back-propagation for Efficient Training
+
+In the most DNN libraries, gradient calculation during back-propagation is supported by Auto-Differentiation (AD) with reverse-mode, which means the partial derivatives will backwardly go through each layer from output to input. Due to more complicated structure, quadratic layer will introduce more intermediate parameters during back-propagation. Compared to AD, Symbolic Differentiation (SD) can derive the symbolic expression of each parameter's partial gradients before the back-propagation. Therefore, training process doesn't need to save every intermediate parameters on the memory.
+
+QuadraLib proposes a hybrid back-propagation scheme to decrease the memory usage during QDNN training, which is the combination of AD and SD. For each quadratic layer, when obtaining input values and output values after forward process, we use SD to calculate the corresponding gradients of weight parameters and input during back-propagation. Therefore, only necessary intermediate parameters will be stored before the backward. 
+On the other hand, since the gradients of other layers such as batch normalization are not easy to formulate in SD, we can still leverage AD to calculate their values. 
+
+Currently, we only support hybrid back-propagation for quadratic fully connected layers (check [here]()), the quadratic convolutional layer version will be soon released. 
 
 
 
