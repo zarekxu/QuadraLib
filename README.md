@@ -46,7 +46,7 @@ The codes about auto-builder can be find in folder [./image_classification/auto_
 
 ### Analysis Tools
 
-QuadraLib provides several analysis tools to help users to analyze activation, gradients, and weights of their generated models. These tools are written as functions in [Jupyter Notebook files] for easy usage and modification. 
+QuadraLib provides several analysis tools to help users to analyze activation, gradients, and weights of their generated models. These tools are written as functions in [Jupyter Notebook files](https://github.com/zarekxu/QuadraLib/tree/main/Analysis_Tools) for easy usage and modification. 
 
 <p align="center">
   <img src="https://github.com/zarekxu/QuadraLib/blob/main/Figures/activation_visulization.png" alt="visualization" width="600">
