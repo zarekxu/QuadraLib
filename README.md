@@ -68,8 +68,8 @@ Currently, we only support hybrid back-propagation for quadratic fully connected
 
 ## Requirements
 
-- Python (**=3.7**)
-- PyTorch (**=1.8.0**)
+- Python (**>=3.5**)
+- PyTorch (**>=1.4.0**)
 - Other dependencies (pyyaml, easydict, tensorboard)
 
 ## Get Started 
