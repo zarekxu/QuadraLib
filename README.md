@@ -61,7 +61,7 @@ In the most DNN libraries, gradient calculation during back-propagation is suppo
 QuadraLib proposes a hybrid back-propagation scheme to decrease the memory usage during QDNN training, which is the combination of AD and SD. For each quadratic layer, when obtaining input values and output values after forward process, we use SD to calculate the corresponding gradients of weight parameters and input during back-propagation. Therefore, only necessary intermediate parameters will be stored before the backward. 
 On the other hand, since the gradients of other layers such as batch normalization are not easy to formulate in SD, we can still leverage AD to calculate their values. 
 
-Currently, we only support hybrid back-propagation for quadratic fully connected layers (check [here]()), the quadratic convolutional layer version will be soon released. 
+Currently, we only support hybrid back-propagation for quadratic fully connected layers (check [here](https://github.com/zarekxu/QuadraLib/blob/main/image_classification/models/quadratic_layer.py)), the quadratic convolutional layer version will be soon released. 
 
 
 
