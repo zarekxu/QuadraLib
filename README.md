@@ -76,7 +76,9 @@ Currently, we only support hybrid back-propagation for quadratic fully connected
 
 Users can find the two application tasks in [./image_classification](https://github.com/zarekxu/QuadraLib/tree/main/image_classification) and [./object_detection](https://github.com/zarekxu/QuadraLib). The step-by-step training and evaluation instructions are included in README file in the two folders, separately.  More recognition tasks will be added in the future. 
 
+## License
 
+QuadraLib is an open-source library under the MIT license (MIT).
 
 ## Cite
 
