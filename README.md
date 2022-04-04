@@ -84,7 +84,7 @@ QuadraLib is an open-source library under the MIT license (MIT).
 
 If you use QuadraLib in a scientific publication, we would appreciate citations to the following paper:
 ```
-@article{wang2019dgl,
+@article{xu2022qua,
     title={QuadraLib: A Performant Quadratic Neural Network Library for Architecture Optimization and Design Exploration},
     author={Xu, Zirui and Xiong, Jinjun and Yu, Fuxun and Chen, Xiang},
     year={2022},
