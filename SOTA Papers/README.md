@@ -18,7 +18,7 @@
 
 9. Nonlinear CNN: improving CNNs with quadratic convolutions. (Jul 2019) [[Springer](https://doi.org/10.1007/s00521-019-04316-4)]
 
-10. Cqnn: Convolutional quadratic neural networks.
+10. Cqnn: Convolutional quadratic neural networks. (Jan 2021) [[IEEE](https://doi.org/10.1109/ICPR48806.2021.9413207)]
 
 11. Annealing based dynamic learning in second-order neural networks.
 
