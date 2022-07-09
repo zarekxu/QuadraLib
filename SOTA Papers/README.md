@@ -8,7 +8,7 @@
 
 4. DeClaris, Nicholas, and Mu-chun Su. "[A novel class of neural networks with quadratic junctions.](https://ieeexplore.ieee.org/document/169910)" *Conference Proceedings 1991 IEEE International Conference on Systems, Man, and Cybernetics*. IEEE, 1991.
 
-5. Fan, Fenglei, Wenxiang Cong, and Ge Wang. "[A new type of neurons for machine learning.](https://arxiv.org/abs/1704.08362)" *International journal for numerical methods in biomedical engineering* 34.2 (2018): e2920.
+5. A new type of neurons for machine learning. (2018) [[arXiv](https://arxiv.org/abs/1704.08362)]
 
 6. Pattern classification using quadratic neuron: An experimental study. (2017) [[IEEE](https://doi.org/10.1109/ICCCNT.2017.8204062)]
 
