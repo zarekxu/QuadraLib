@@ -1,6 +1,6 @@
 ## State-of-the-art QDNNs Papers
 
-1. Rotational quadratic function neural networks. (1991) [[IEEE](https://doi.org/10.1109/IJCNN.1991.170509)]
+1. Rotational quadratic function neural networks. (Nov 1991) [[IEEE](https://doi.org/10.1109/IJCNN.1991.170509)]
 
 2. Quadratic residual networks: A new class of neural networks for solving forward and inverse problems in physics involving pdes. (2021) [[arXiv](https://arxiv.org/abs/2101.08366)] [[SIAM](https://doi.org/10.1137/1.9781611976700.76)]
 
