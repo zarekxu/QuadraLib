@@ -10,7 +10,7 @@
 
 5. Fan, Fenglei, Wenxiang Cong, and Ge Wang. "[A new type of neurons for machine learning.](https://arxiv.org/abs/1704.08362)" *International journal for numerical methods in biomedical engineering* 34.2 (2018): e2920.
 
-6. Ganesh, Yaparla, Rhishi Pratap Singh, and Garimella Rama Murthy. "[Pattern classification using quadratic neuron: An experimental study.](https://ieeexplore.ieee.org/document/8204062)" *2017 8th International Conference on Computing, Communication and Networking Technologies (ICCCNT)*. IEEE, 2017. [[IEEE](https://doi.org/10.1109/ICCCNT.2017.8204062)]
+6. Pattern classification using quadratic neuron: An experimental study. (2017) [[IEEE](https://doi.org/10.1109/ICCCNT.2017.8204062)]
 
 7. Sisyphus: A cautionary tale of using low-degree polynomial activations in privacy-preserving deep learning. (2021) [[arXiv](https://doi.org/10.48550/arXiv.2107.12342)] [[GitHub](https://github.com/kvgarimella/sisyphus-ppml)]
 
