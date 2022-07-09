@@ -6,7 +6,7 @@
 
 3. Chrysos, Grigorios G., et al. "[P-nets: Deep polynomial neural networks.](https://arxiv.org/abs/2003.03828)" *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition*. 2020.
 
-4. DeClaris, Nicholas, and Mu-chun Su. "[A novel class of neural networks with quadratic junctions.](https://ieeexplore.ieee.org/document/169910)" *Conference Proceedings 1991 IEEE International Conference on Systems, Man, and Cybernetics*. IEEE, 1991.
+4. A novel class of neural networks with quadratic junctions. (Oct 1991) [[IEEE](https://doi.org/10.1109/ICSMC.1991.169910)]
 
 5. A new type of neurons for machine learning. (2018) [[arXiv](https://arxiv.org/abs/1704.08362)]
 
