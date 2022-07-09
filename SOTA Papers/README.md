@@ -1,6 +1,7 @@
 ## State-of-the-art QDNNs Papers
 
-1. Rotational quadratic function neural networks.
+1. Rotational quadratic function neural networks. [[IEEE](https://ieeexplore.ieee.org/abstract/document/170509)]
+
 2. Quadratic residual networks: A new class of neural networks for solving forward and inverse problems in physics involving pdes.
 
 3. P-nets: Deep polynomial neural networks.
