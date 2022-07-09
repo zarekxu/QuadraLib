@@ -14,7 +14,7 @@
 
 7. Sisyphus: A cautionary tale of using low-degree polynomial activations in privacy-preserving deep learning. (2021) [[arXiv](https://doi.org/10.48550/arXiv.2107.12342)] [[GitHub](https://github.com/kvgarimella/sisyphus-ppml)]
 
-8. Improved polynomial neural networks with normalised activations. (2020) [[IEEE](https://doi.org/10.1109/IJCNN48605.2020.9207535)] [[GitHub](https://github.com/mohit1997/PAF)]
+8. Improved polynomial neural networks with normalised activations. (Jul 2020) [[IEEE](https://doi.org/10.1109/IJCNN48605.2020.9207535)] [[GitHub](https://github.com/mohit1997/PAF)]
 
 9. Nonlinear CNN: improving CNNs with quadratic convolutions. (Jul 2019) [[Springer](https://doi.org/10.1007/s00521-019-04316-4)]
 
