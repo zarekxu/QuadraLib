@@ -14,7 +14,7 @@
 
 7. Garimella, Karthik, Nandan Kumar Jha, and Brandon Reagen. "[Sisyphus: A cautionary tale of using low-degree polynomial activations in privacy-preserving deep learning.](https://arxiv.org/abs/2107.12342)" *arXiv preprint arXiv:2107.12342* (2021).
 
-8. Goyal, Mohit, Rajan Goyal, and Brejesh Lall. "Improved polynomial neural networks with normalised activations." *2020 International Joint Conference on Neural Networks (IJCNN)*. IEEE, 2020. [[IEEE](https://ieeexplore.ieee.org/abstract/document/9207535)] [[PDF](http://vigir.missouri.edu/~gdesouza/Research/Conference_CDs/IEEE_WCCI_2020/IJCNN/Papers/N-20623.pdf)] [[GitHub](https://github.com/mohit1997/PAF)]
+8. Goyal, Mohit, Rajan Goyal, and Brejesh Lall. "Improved polynomial neural networks with normalised activations." *2020 International Joint Conference on Neural Networks (IJCNN)*. IEEE, 2020. [[DOI](https://doi.org/10.1109/IJCNN48605.2020.9207535)] [[PDF](http://vigir.missouri.edu/~gdesouza/Research/Conference_CDs/IEEE_WCCI_2020/IJCNN/Papers/N-20623.pdf)] [[GitHub](https://github.com/mohit1997/PAF)]
 
 9. Jiang, Yiyang, et al. "[Nonlinear CNN: improving CNNs with quadratic convolutions.](https://doi.org/10.1007/s00521-019-04316-4)" *Neural Computing and Applications* 32.12 (2020): 8507-8516.
 
