@@ -2,7 +2,7 @@
 
 1. Cheung, K. F., and C. S. Leung. "[Rotational quadratic function neural networks.](https://ieeexplore.ieee.org/abstract/document/170509)" *[Proceedings] 1991 IEEE International Joint Conference on Neural Networks*. IEEE, 1991.
 
-2. Quadratic residual networks: A new class of neural networks for solving forward and inverse problems in physics involving pdes. (2021) [[arXiv](https://arxiv.org/abs/2101.08366)]
+2. Quadratic residual networks: A new class of neural networks for solving forward and inverse problems in physics involving pdes. (2021) [[arXiv](https://arxiv.org/abs/2101.08366)] [[SIAM](https://doi.org/10.1137/1.9781611976700.76)]
 
 3. P-nets: Deep polynomial neural networks. (2020) [[arXiv](https://arxiv.org/abs/2003.03828)] [[IEEE](https://doi.org/10.1109/CVPR42600.2020.00735)] 
 
