@@ -12,7 +12,7 @@
 
 6. Ganesh, Yaparla, Rhishi Pratap Singh, and Garimella Rama Murthy. "[Pattern classification using quadratic neuron: An experimental study.](https://ieeexplore.ieee.org/document/8204062)" *2017 8th International Conference on Computing, Communication and Networking Technologies (ICCCNT)*. IEEE, 2017.
 
-7. Sisyphus: A cautionary tale of using low-degree polynomial activations in privacy-preserving deep learning.
+7. Garimella, Karthik, Nandan Kumar Jha, and Brandon Reagen. "[Sisyphus: A cautionary tale of using low-degree polynomial activations in privacy-preserving deep learning.](https://arxiv.org/abs/2107.12342)" *arXiv preprint arXiv:2107.12342* (2021).
 
 8. Improved polynomial neural networks with normalised activations.
 
