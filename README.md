@@ -25,7 +25,7 @@ Quadratic Deep Neural Network is a new but rapidly evovling research topic, whic
 ### Models and benchmarks for QDNN researchers
 
 
-QuadraLib collects the current [QDNN papers](https://github.com/zarekxu/QuadraLib/blob/main/SOTA%20Papers/paper_list.md) and their key designs. It also provides a variety of pre-defined QDNN models in multiple application scenarios (e.g. image classification, object detection, image generation) that achieve the state-of-the-art accuracy performance. Currently, QuadraLib provides pre-trained VGGNet and ResNet models with CIFAR-10/CIFAR-100 in image classification and VGG-based SSD with VOC2007 in object detection.
+QuadraLib collects the current [QDNN papers](https://github.com/zarekxu/QuadraLib/tree/main/SOTA%20Papers) and their key designs. It also provides a variety of pre-defined QDNN models in multiple application scenarios (e.g. image classification, object detection, image generation) that achieve the state-of-the-art accuracy performance. Currently, QuadraLib provides pre-trained VGGNet and ResNet models with CIFAR-10/CIFAR-100 in image classification and VGG-based SSD with VOC2007 in object detection.
 
 Users can also easily create their own QDNN models by using quandratic layers provided by QuadraLib, via mannually building or auto-builder. More models and application tasks will be supported in the future.  
 
