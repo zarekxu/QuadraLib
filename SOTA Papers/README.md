@@ -20,7 +20,7 @@
 
 10. Cqnn: Convolutional quadratic neural networks. (Jan 2021) [[IEEE](https://doi.org/10.1109/ICPR48806.2021.9413207)]
 
-11. Annealing based dynamic learning in second-order neural networks.
+11. Annealing based dynamic learning in second-order neural networks. (Jun 1996) [[IEEE](https://doi.org/10.1109/ICNN.1996.548936)]
 
 12. Delphi: A cryptographic inference service for neural networks.
 
