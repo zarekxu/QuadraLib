@@ -4,7 +4,7 @@
 
 2. Quadratic residual networks: A new class of neural networks for solving forward and inverse problems in physics involving pdes. (2021) [[arXiv](https://arxiv.org/abs/2101.08366)] [[SIAM](https://doi.org/10.1137/1.9781611976700.76)]
 
-3. P-nets: Deep polynomial neural networks. (2020) [[arXiv](https://arxiv.org/abs/2003.03828)] [[IEEE](https://doi.org/10.1109/CVPR42600.2020.00735)] 
+3. P-nets: Deep polynomial neural networks. (Jun 2020) [[arXiv](https://arxiv.org/abs/2003.03828)] [[IEEE](https://doi.org/10.1109/CVPR42600.2020.00735)] 
 
 4. A novel class of neural networks with quadratic junctions. (Oct 1991) [[IEEE](https://doi.org/10.1109/ICSMC.1991.169910)]
 
