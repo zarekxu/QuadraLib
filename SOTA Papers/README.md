@@ -16,7 +16,7 @@
 
 8. Goyal, Mohit, Rajan Goyal, and Brejesh Lall. "Improved polynomial neural networks with normalised activations." *2020 International Joint Conference on Neural Networks (IJCNN)*. IEEE, 2020. [[IEEE](https://doi.org/10.1109/IJCNN48605.2020.9207535)] [[GitHub](https://github.com/mohit1997/PAF)]
 
-9. Jiang, Yiyang, et al. "[Nonlinear CNN: improving CNNs with quadratic convolutions.](https://doi.org/10.1007/s00521-019-04316-4)" *Neural Computing and Applications* 32.12 (2020): 8507-8516. [[Springer](https://doi.org/10.1007/s00521-019-04316-4)]
+9. Jiang, Yiyang, et al. "Nonlinear CNN: improving CNNs with quadratic convolutions." *Neural Computing and Applications* 32.12 (2020): 8507-8516. [[Springer](https://doi.org/10.1007/s00521-019-04316-4)]
 
 10. Cqnn: Convolutional quadratic neural networks.
 
