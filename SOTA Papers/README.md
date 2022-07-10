@@ -11,8 +11,7 @@
 9. P-nets: Deep polynomial neural networks. (Mar, Jun 2020) [[arXiv](https://arxiv.org/abs/2003.03828)] [[IEEE](https://doi.org/10.1109/CVPR42600.2020.00735)] 
 10. Improved polynomial neural networks with normalised activations. (Jul 2020) [[IEEE](https://doi.org/10.1109/IJCNN48605.2020.9207535)] [[GitHub](https://github.com/mohit1997/PAF)]
 11. Quadratic residual networks: A new class of neural networks for solving forward and inverse problems in physics involving pdes. (Jan 2021) [[arXiv](https://arxiv.org/abs/2101.08366)] [[SIAM](https://doi.org/10.1137/1.9781611976700.76)]
-
-7. Sisyphus: A cautionary tale of using low-degree polynomial activations in privacy-preserving deep learning. (2021) [[arXiv](https://doi.org/10.48550/arXiv.2107.12342)] [[GitHub](https://github.com/kvgarimella/sisyphus-ppml)]
+12. Sisyphus: A cautionary tale of using low-degree polynomial activations in privacy-preserving deep learning. (Jul 2021) [[arXiv](https://doi.org/10.48550/arXiv.2107.12342)] [[GitHub](https://github.com/kvgarimella/sisyphus-ppml)]
 
 10. Cqnn: Convolutional quadratic neural networks. (Jan 2021) [[IEEE](https://doi.org/10.1109/ICPR48806.2021.9413207)]
  
