@@ -6,7 +6,7 @@
 4. Development of quadratic neural unit with applications to pattern classification. (Sep 2003) [[IEEE](https://doi.org/10.1109/ISUMA.2003.1236154)]
 5. Pattern classification using quadratic neuron: An experimental study. (Jul 2017) [[IEEE](https://doi.org/10.1109/ICCCNT.2017.8204062)]
 6. Non-linear convolution filters for cnn-based learning. (Aug, Oct 2017) [[arXiv](https://doi.org/10.48550/arXiv.1708.07038)] [[ICCV 2017](https://openaccess.thecvf.com/content_iccv_2017/html/Zoumpourlis_Non-Linear_Convolution_Filters_ICCV_2017_paper.html)]
-7. A new type of neurons for machine learning. (2018) [[arXiv](https://arxiv.org/abs/1704.08362)]
+7. A new type of neurons for machine learning. (Jul 2017) [[arXiv](https://arxiv.org/abs/1704.08362)]
 8. Nonlinear CNN: improving CNNs with quadratic convolutions. (Jul 2019) [[Springer](https://doi.org/10.1007/s00521-019-04316-4)]
 9. P-nets: Deep polynomial neural networks. (Jun 2020) [[arXiv](https://arxiv.org/abs/2003.03828)] [[IEEE](https://doi.org/10.1109/CVPR42600.2020.00735)] 
 10. Improved polynomial neural networks with normalised activations. (Jul 2020) [[IEEE](https://doi.org/10.1109/IJCNN48605.2020.9207535)] [[GitHub](https://github.com/mohit1997/PAF)]
