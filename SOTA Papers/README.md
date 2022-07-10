@@ -19,4 +19,4 @@
  
 12. Delphi: A cryptographic inference service for neural networks. (2020) [[USENIX](https://www.usenix.org/conference/usenixsecurity20/presentation/mishra)] [[GitHub](https://github.com/mc2-project/delphi)]
 
-15. Expressivity and Trainability of Quadratic Networks. [[arXiv](https://arxiv.org/abs/2110.06081)]
+15. Expressivity and Trainability of Quadratic Networks. (Oct 2021) [[arXiv](https://arxiv.org/abs/2110.06081)]
