@@ -13,8 +13,7 @@
 11. Cqnn: Convolutional quadratic neural networks. (Jan 2021) [[IEEE](https://doi.org/10.1109/ICPR48806.2021.9413207)]
 12. Quadratic residual networks: A new class of neural networks for solving forward and inverse problems in physics involving pdes. (Jan 2021) [[arXiv](https://arxiv.org/abs/2101.08366)] [[SIAM](https://doi.org/10.1137/1.9781611976700.76)]
 13. Sisyphus: A cautionary tale of using low-degree polynomial activations in privacy-preserving deep learning. (Jul 2021) [[arXiv](https://doi.org/10.48550/arXiv.2107.12342)] [[GitHub](https://github.com/kvgarimella/sisyphus-ppml)]
+14. Expressivity and Trainability of Quadratic Networks. (Oct 2021) [[arXiv](https://arxiv.org/abs/2110.06081)]
 
 
 12. Delphi: A cryptographic inference service for neural networks. (2020) [[USENIX](https://www.usenix.org/conference/usenixsecurity20/presentation/mishra)] [[GitHub](https://github.com/mc2-project/delphi)]
-
-15. Expressivity and Trainability of Quadratic Networks. (Oct 2021) [[arXiv](https://arxiv.org/abs/2110.06081)]
