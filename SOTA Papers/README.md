@@ -17,8 +17,8 @@
  
 12. Delphi: A cryptographic inference service for neural networks. (2020) [[USENIX](https://www.usenix.org/conference/usenixsecurity20/presentation/mishra)] [[GitHub](https://github.com/mc2-project/delphi)]
 
-13. Development of quadratic neural unit with applications to pattern classification. (Sep 2003) [[ISUMA 2003](https://doi.org/10.1109/ISUMA.2003.1236154)]
+13. Development of quadratic neural unit with applications to pattern classification. (Sep 2003) [[ISUMA 2003, IEEE](https://doi.org/10.1109/ISUMA.2003.1236154)]
 
-14. Non-linear convolution filters for cnn-based learning. (Aug, Oct 2017) [[arXiv](https://doi.org/10.48550/arXiv.1708.07038)] [[ICCV 2017](https://openaccess.thecvf.com/content_iccv_2017/html/Zoumpourlis_Non-Linear_Convolution_Filters_ICCV_2017_paper.html)]
+14. Non-linear convolution filters for cnn-based learning. (Aug, Oct 2017) [[arXiv](https://doi.org/10.48550/arXiv.1708.07038)] [[ICCV 2017, IEEE](https://openaccess.thecvf.com/content_iccv_2017/html/Zoumpourlis_Non-Linear_Convolution_Filters_ICCV_2017_paper.html)]
 
 15. Expressivity and Trainability of Quadratic Networks.
