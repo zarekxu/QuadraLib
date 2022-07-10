@@ -15,7 +15,7 @@
 
 10. Cqnn: Convolutional quadratic neural networks. (Jan 2021) [[IEEE](https://doi.org/10.1109/ICPR48806.2021.9413207)]
  
-12. Delphi: A cryptographic inference service for neural networks.
+12. Delphi: A cryptographic inference service for neural networks. [[GitHub](https://github.com/mc2-project/delphi)]
 
 13. Development of quadratic neural unit with applications to pattern classification.
 
